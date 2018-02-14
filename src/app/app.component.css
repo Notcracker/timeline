@@ -1,0 +1,9 @@
+.app {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.add-event, .timeline {
+  width: 50%;
+  margin-left: 25%;
+}

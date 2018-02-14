@@ -1,0 +1,52 @@
+<div class="event-form">
+  <div class="form-header">Add new event</div>
+  <select (ngModelChange)="eventSelected($event)" [(ngModel)]="selectedEvent">
+    <option *ngFor="let event of events" [ngValue]="event">{{event}}</option>
+  </select>
+  <div *ngIf="selectedEvent === 'Transaction'" class="fields-form">
+    <form [formGroup]="transactionGroup">
+      <div class="input-wrapper">
+        <input type="text" placeholder="Sum of transaction"  formControlName="sumOfTransaction" name="sumOfTransaction" [(ngModel)]="eventsConfig.transaction.sumOfTransaction">
+        <div class="form-error" [hidden]="transactionGroup.controls.sumOfTransaction.valid || transactionGroup.controls.sumOfTransaction.untouched">This field should not be blank.</div>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Currency" formControlName="currency" name="currency" [(ngModel)]="eventsConfig.transaction.currency">
+        <div class="form-error" [hidden]="transactionGroup.controls.currency.valid || transactionGroup.controls.currency.untouched">This field should not be blank.</div>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Sender" formControlName="sender" name="sender" [(ngModel)]="eventsConfig.transaction.sender">
+        <div class="form-error" [hidden]="transactionGroup.controls.sender.valid || transactionGroup.controls.sender.untouched">This field should not be blank.</div>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Description" formControlName="description" name="description" [(ngModel)]="eventsConfig.transaction.description">
+        <div class="form-error" [hidden]="transactionGroup.controls.description.valid || transactionGroup.controls.description.untouched">This field should not be blank.</div>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" placeholder="Type" formControlName="type" name="type" [(ngModel)]="eventsConfig.transaction.type">
+        <div class="form-error" [hidden]="transactionGroup.controls.type.valid || transactionGroup.controls.type.untouched">This field should not be blank.</div>
+      </div>
+      <div class="input-wrapper">
+        <input type="date" placeholder="Date" formControlName="date" name="date" [(ngModel)]="eventsConfig.transaction.date">
+        <div class="form-error" [hidden]="transactionGroup.controls.date.valid || transactionGroup.controls.date.untouched">This field should not be blank.</div>
+      </div>
+    </form>
+    <button *ngIf="selectedEvent" type="button" (click)="addEvent()" [disabled]="transactionGroup.invalid">Done</button>
+  </div>
+  <div *ngIf="selectedEvent === 'News'" class="fields-form">
+    <form [formGroup]="newsGroup">
+      <div class="input-wrapper">
+        <input type="text" placeholder="Header" formControlName="headerOfNews" name="headerOfNews" [(ngModel)]="eventsConfig.news.headerOfNews">
+        <div class="form-error" [hidden]="newsGroup.controls.headerOfNews.valid || newsGroup.controls.headerOfNews.untouched">This field should not be blank.</div>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" placeholder="News" formControlName="news" name="news" [(ngModel)]="eventsConfig.news.news">
+        <div class="form-error" [hidden]="newsGroup.controls.news.valid || newsGroup.controls.news.untouched">This field should not be blank.</div>
+      </div>
+      <div class="input-wrapper">
+        <input type="date" placeholder="Date" formControlName="date" name="date" [(ngModel)]="eventsConfig.news.date">
+        <div class="form-error" [hidden]="newsGroup.controls.date.valid || newsGroup.controls.date.untouched">This field should not be blank.</div>
+      </div>
+    </form>
+    <button *ngIf="selectedEvent" type="button" (click)="addEvent()" [disabled]="newsGroup.invalid">Done</button>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.event-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  align-self: center;
+}
+
+.fields-form, form {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+select, input {
+  outline: none;
+  margin-top: 15px;
+  height: 24px;
+  border-radius: 2px;
+  border: 1px solid white;
+  width: 100%;
+}
+
+.input-wrapper {
+  width: 31%;
+}
+
+.form-error {
+  position: absolute;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #ff8080;
+}
+
+option {
+  height: 26px;
+}
+
+button {
+  background-color: #5da4fc;
+  border: 2px solid #5da4fc;
+  color: white;
+  height: 28px;
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
