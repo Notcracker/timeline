@@ -3,22 +3,25 @@ export class EventWindow {
   public data;
   public cmpRef;
   public hasBeenRead = false;
+  
+  resetColor() { }
 
   openInNewWindow() {
     this.windowRef = window.open(window.location.href, 'newwindow', 'width=450,height=400');
-    localStorage.setItem('event', JSON.stringify(this.data));
-
-    window.addEventListener('storage', (eve) => {this.storageEventHandler(eve, this.data, this.cmpRef)}, false);
+    this.windowRef.event = this.data;
+    window['parentFuncion'] = (message) => {
+      this.storageEventHandler(message, this.data, this.cmpRef);
+    }
   }
 
-  storageEventHandler(evt, data, cmpRef){
-    let oldValue = JSON.parse(evt.oldValue);
-
-    if (oldValue.type === 'news') {
+  storageEventHandler(evt, data, cmpRef) {
+    if (evt.type === 'news') {
+      this.resetColor();
+      console.log('????')
       this.hasBeenRead = true;
       data.event.hasBeenRead = true;
     }
-    if (oldValue.type === 'transaction') {
+    if (evt.type === 'transaction') {
       cmpRef.destroy();
       this.windowRef.close();
     }

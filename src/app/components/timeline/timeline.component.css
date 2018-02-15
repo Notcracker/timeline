@@ -1,1 +1,8 @@
-
+a {
+  text-decoration: none;
+  color: #47CFFF;
+  cursor: pointer;
+}
+.sort {
+  font-size: 14px;
+}

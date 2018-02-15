@@ -9,7 +9,7 @@ export class NewsWindowComponent {
   @Input() data;
 
   markNews() {
-    localStorage.removeItem('event');
     this.data.event.hasBeenRead= true;
+    window.opener.parentFuncion(this.data);
   }
 }

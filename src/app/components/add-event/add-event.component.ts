@@ -59,7 +59,11 @@ export class AppEventComponent {
   addEvent() {
     let type = this.selectedEvent.toLowerCase();
 
-    this.sharedService.changeMessage({ type, event: this.eventsConfig[type] });
+    this.sharedService.changeMessage({ type, event: this.clone(this.eventsConfig[type]) });
     this.selectedEvent = '';
+  }
+
+  clone(obj) {
+    return JSON.parse(JSON.stringify(obj));
   }
 }

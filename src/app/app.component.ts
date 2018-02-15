@@ -10,9 +10,9 @@ export class AppComponent {
   public openedData = {};
 
   ngAfterContentInit() {
-    if (window.opener) {
+    if (window.opener && window.event) {
       this.openedBy = true;
-      this.openedData = JSON.parse(localStorage.getItem('event'));
+      this.openedData = window.event;
     }
   }
 }

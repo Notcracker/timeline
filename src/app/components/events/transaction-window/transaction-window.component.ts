@@ -9,6 +9,6 @@ export class TransactionWindowComponent {
   @Input() data;
 
   deleteTransaction() {
-    localStorage.removeItem('event');
+    window.opener.parentFuncion(this.data);
   }
 }

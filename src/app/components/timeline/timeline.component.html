@@ -1,1 +1,4 @@
+<div class="sort" *ngIf="eventsContainerRef.length">
+  Sort by <a (click)="sortBy('date')">date</a> <a (click)="sortBy('type')">type</a>
+</div>
 <ng-container #eventsContainer></ng-container>
