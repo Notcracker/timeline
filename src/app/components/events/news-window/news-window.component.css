@@ -1,11 +1,57 @@
 .news {
-  margin-top: 20px;
+  position: relative;
   border-top: 1px solid #497dbd;
   border-bottom: 1px solid #497dbd;
   border-radius: 10px;
-  min-height: 30px;
   text-align: center;
+  width: 410px;
+  height: 350px;
 }
 .news-header {
   padding: 5px;
+}
+
+.news-body {
+  overflow-y: auto;
+  max-height: 270px
+}
+
+.news-date {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.news-body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 3px;
+}
+
+.news-body::-webkit-scrollbar {
+	width: 6px;
+  border-radius: 3px;
+	background-color: #F5F5F5;
+}
+
+.news-body::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+button {
+  background-color: #5da4fc;
+  border: 2px solid #5da4fc;
+  color: white;
+  height: 24px;
+  border-radius: 2px;
+  width: 410px;
+  cursor: pointer;
+  margin-top: 15px;
 }

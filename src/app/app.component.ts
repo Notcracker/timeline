@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public openedBy = false;
+  public openedData = {};
 
   ngAfterContentInit() {
     if (window.opener) {
       this.openedBy = true;
-      console.log(localStorage.getItem('test'));
+      this.openedData = JSON.parse(localStorage.getItem('event'));
     }
   }
 }

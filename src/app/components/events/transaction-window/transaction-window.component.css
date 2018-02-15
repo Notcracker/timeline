@@ -1,10 +1,11 @@
 .transaction {
+  position: relative;
   text-align: center;
-  margin-top: 20px;
   border-top: 1px solid #47CFFF;
   border-bottom: 1px solid #47CFFF;
   border-radius: 10px;
-  min-height: 50px;
+  width: 410px;
+  height: 350px;
 }
 
 .transaction-data, .sender {
@@ -12,7 +13,16 @@
 }
 
 .sender {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
   font-style: italic;
+}
+
+.description {
+  overflow-y: auto;
+  max-height: 270px
 }
 
 .green {
@@ -21,4 +31,37 @@
 
 .red {
   color: #ff8080;
+}
+
+button {
+  background-color: #5da4fc;
+  border: 2px solid #5da4fc;
+  color: white;
+  height: 24px;
+  border-radius: 2px;
+  width: 410px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.description::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 3px;
+}
+
+.description::-webkit-scrollbar {
+	width: 6px;
+  border-radius: 3px;
+	background-color: #F5F5F5;
+}
+
+.description::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
 }

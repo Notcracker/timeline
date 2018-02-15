@@ -2,14 +2,17 @@ export class EventWindow {
   public windowRef;
   public data;
 
-  ngOnInit() {
-    this.windowRef = window.open(window.location.href, 'newwindow', 'width=300,height=250');
-    localStorage.setItem('test', JSON.stringify(this.data));
+  openInNewWindow() {
+    this.windowRef = window.open(window.location.href, 'newwindow', 'width=450,height=400');
+    localStorage.setItem('event', JSON.stringify(this.data));
 
     window.addEventListener('storage', this.storageEventHandler, false);
-
   }
+
   storageEventHandler(evt){
-    console.log("storage event called key: " + evt);
+    let oldValue = JSON.parse(evt.oldValue);
+
+    if (oldValue === 'news') {}
+    if (oldValue === 'transaction') {}
   }
 }

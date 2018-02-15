@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { EventWindow } from '../event.base';
 
 @Component({
   selector: 'news-window',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  templateUrl: './news-window.component.html',
+  styleUrls: ['./news-window.component.css']
 })
-export class NewsWindowComponent extends EventWindow {
+export class NewsWindowComponent {
   @Input() data;
-  constructor() {
-    super();
+
+  markNews() {
+    localStorage.removeItem('event');
   }
 }

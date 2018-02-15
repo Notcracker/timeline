@@ -2,5 +2,7 @@
   <div class="transaction-data" [ngClass]="data.event.type === 'Accrual' ? 'green' : 'red'">
     {{(data.event.type === 'Accrual' ? '+' : '-') + data.event.sumOfTransaction + ' ' + data.event.currency}}
   </div>
+  <div class="description">{{data.event.description}}</div>
   <div class="sender">{{data.event.date + ' ' + data.event.sender}}</div>
 </div>
+<button type="button" name="button" (click)="deleteTransaction()">Delete transaction</button>

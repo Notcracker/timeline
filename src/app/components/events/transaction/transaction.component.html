@@ -1,4 +1,4 @@
-<div class="transaction">
+<div class="transaction" (click)="openInNewWindow()">
   <div class="transaction-data" [ngClass]="data.event.type === 'Accrual' ? 'green' : 'red'">
     {{(data.event.type === 'Accrual' ? '+' : '-') + data.event.sumOfTransaction + ' ' + data.event.currency}}
   </div>

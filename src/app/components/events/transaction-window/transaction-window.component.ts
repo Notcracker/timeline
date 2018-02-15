@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { EventWindow } from '../event.base';
 
 @Component({
   selector: 'transaction-window',
-  templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.css']
+  templateUrl: './transaction-window.component.html',
+  styleUrls: ['./transaction-window.component.css']
 })
-export class TransactionWindowComponent extends EventWindow {
+export class TransactionWindowComponent {
   @Input() data;
-  constructor() {
-    super();
+
+  deleteTransaction() {
+    localStorage.removeItem('event');
   }
 }

@@ -6,3 +6,11 @@
     <timeline></timeline>
   </div>
 </div>
+<div *ngIf="openedBy" class="app">
+  <div *ngIf="openedData.type === 'news'">
+    <news-window [data]="openedData"></news-window>
+  </div>
+  <div *ngIf="openedData.type === 'transaction'">
+    <transaction-window [data]="openedData"></transaction-window>
+  </div>
+</div>

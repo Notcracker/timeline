@@ -1,4 +1,5 @@
 .news {
+  cursor: pointer;
   margin-top: 20px;
   border-top: 1px solid #497dbd;
   border-bottom: 1px solid #497dbd;
