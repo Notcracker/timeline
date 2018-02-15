@@ -52,12 +52,11 @@ export class AppEventComponent {
 
 
   eventSelected(event) {
-    this.transactionGroup.clearValidators();
-    this.newsGroup.clearValidators();
+    this.transactionGroup.reset();
+    this.newsGroup.reset();
   }
 
   addEvent() {
-    console.log(this.newsGroup.invalid, this.transactionGroup.invalid)
     let type = this.selectedEvent.toLowerCase();
 
     this.sharedService.changeMessage({ type, event: this.eventsConfig[type] });

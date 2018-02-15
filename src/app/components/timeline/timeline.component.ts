@@ -45,5 +45,6 @@ export class TimelineComponent {
     let target = this.eventsContainer;
     let widgetComponent = this.componentFactoryResolver.resolveComponentFactory(this.eventsConfig[message.type]);
     let cmpRef: any = target.createComponent(widgetComponent);
+    cmpRef.instance.data = message;
   }
 }

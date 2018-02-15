@@ -15,13 +15,8 @@
   flex-wrap: wrap;
 }
 
-select, input {
-  outline: none;
-  margin-top: 15px;
-  height: 24px;
-  border-radius: 2px;
-  border: 1px solid white;
-  width: 100%;
+.header {
+  width: 64%!important;
 }
 
 .input-wrapper {
@@ -33,6 +28,25 @@ select, input {
   font-size: 12px;
   letter-spacing: 0.5px;
   color: #ff8080;
+}
+
+.line-break {
+  width: 100%;
+}
+
+textarea {
+  margin-top: 15px;
+  width: 100%;
+  resize: vertical;
+  border-radius: 2px;
+}
+
+select {
+  height: 28px!important;
+}
+
+input[name=date] {
+  height: 26px;
 }
 
 option {
@@ -52,4 +66,13 @@ button {
 
 button:disabled {
   cursor: not-allowed;
+}
+
+select, input {
+  outline: none;
+  margin-top: 15px;
+  border-radius: 2px;
+  height: 24px;
+  border: 1px solid white;
+  width: 100%;
 }

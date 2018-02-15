@@ -4,10 +4,10 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class SharedService {
   private messageSource;
-  private currentMessage;
+  public currentMessage;
 
   constructor() {
-    this.messageSource = new BehaviorSubject();
+    this.messageSource = new BehaviorSubject(null);
     this.currentMessage = this.messageSource.asObservable();
   }
 

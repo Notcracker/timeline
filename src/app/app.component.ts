@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public openedBy = false;
+
+  ngAfterContentInit() {
+    if (window.opener) {
+      this.openedBy = true;
+      console.log(localStorage.getItem('test'));
+    }
+  }
 }
