@@ -1,6 +1,6 @@
-<div class="news">
+<div [ngClass]="data.event.hasBeenRead ? 'aquired': ''" class="news">
   <div class="news-header">{{data.event.headerOfNews}}</div>
   <div class="news-body">{{data.event.news}}</div>
   <div class="news-date">{{data.event.date}}</div>
 </div>
-<button type="button" name="button" (click)="markNews()">Acquainted</button>
+<button *ngIf="!data.event.hasBeenRead" type="button" name="button" (click)="markNews()">Acquainted</button>

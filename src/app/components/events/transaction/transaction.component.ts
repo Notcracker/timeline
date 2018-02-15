@@ -8,6 +8,7 @@ import { EventWindow } from '../event.base';
 })
 export class TransactionComponent extends EventWindow {
   @Input() data;
+  @Input() cmpRef;
   constructor() {
     super();
   }

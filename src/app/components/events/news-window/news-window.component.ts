@@ -10,5 +10,6 @@ export class NewsWindowComponent {
 
   markNews() {
     localStorage.removeItem('event');
+    this.data.event.hasBeenRead= true;
   }
 }

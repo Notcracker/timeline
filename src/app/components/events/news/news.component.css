@@ -7,6 +7,9 @@
   min-height: 30px;
   text-align: center;
 }
+.aquired {
+  border: 2px solid #497dbd;
+}
 .news-header {
   padding: 5px;
 }
